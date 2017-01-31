@@ -5,21 +5,23 @@ let pagination = document.querySelectorAll('.pagination>li');
 let activeImg;
 let activePag;
 let images = document.querySelectorAll('.carousel>li');
-for (let i = 0; i < images.length; i++) {
-  if (images[i].style.display == 'none') {
-    continue
+
+btnRight.onclick = () => {
+  for (let i = 0; i < images.length; i++) {
+  if (images[i].style.display === 'none') {
+  continue
   } else {
-    activeImg = images[i];
+     activeImg = images[i];
     activePag = pagination[i];
   }
 }
+console.log(activeImg);
+console.log(activePag);
 let nextPag = activePag.nextElementSibling;
 let nextImg = activeImg.nextElementSibling;
 let previousPag = activePag.previousElementSibling;
-let previousImg = activeImg.previousElementSibling;
-
-btnRight.onclick = () => {
-  activeImg.style.display = 'none'
+let previousImg = activeImg.previousElementSibling
+  activeImg.style.display = 'none';
   if (nextImg) {
     nextImg.style.display = 'block';
     activePag.classList.remove('active');
@@ -32,7 +34,21 @@ btnRight.onclick = () => {
 }
 
 btnLeft.onclick = () => {
-  activeImg.style.display = 'none'
+  for (let i = 0; i < images.length; i++) {
+  if (images[i].style.display === 'none') {
+  continue
+  } else {
+     activeImg = images[i];
+    activePag = pagination[i];
+  }
+}
+console.log(activeImg);
+console.log(activePag);
+let nextPag = activePag.nextElementSibling;
+let nextImg = activeImg.nextElementSibling;
+let previousPag = activePag.previousElementSibling;
+let previousImg = activeImg.previousElementSibling
+  activeImg.style.display = 'none';
   if (previousImg) {
     previousImg.style.display = 'block';
     activePag.classList.remove('active');
